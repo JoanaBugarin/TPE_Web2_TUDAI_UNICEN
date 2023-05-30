@@ -1,0 +1,49 @@
+body {
+    background-color: gray;
+    color: white;
+}
+
+.card {
+    background: none;
+    border: none;
+}
+
+img.img-carr {
+    width: 50%;
+}
+
+.w-100 {
+    text-align: center;
+}
+
+.btn {
+    margin-bottom: 50px;
+}
+
+div.btn-group.d-flex {
+    width: 10%;
+}
+
+.flex-row-reverse {
+    margin-right: 10px;
+}
+
+section.first-section {
+    background:url('https://i.imgur.com/hDajQJY.png');
+    background-size:cover;
+}
+
+.navbar-brand {
+    margin-right: auto;
+    margin-left: 10px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.second-section {
+    text-align: center;
+}
