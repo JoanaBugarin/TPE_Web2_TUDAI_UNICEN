@@ -14,7 +14,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-bottom-dark" data-bs-theme="dark">
   <div class="container-fluid">
     <img src="https://i.imgur.com/Ji2Odzw.jpg" alt="Logo Get Out" width="55" height="50" class="d-inline-block align-text-top">
-    <a class="navbar-brand text-light" href="#">Salas de Escape</a>
+    <a class="navbar-brand text-light" href="http://localhost/TPE_Web2_TUDAI_UNICEN/">Salas de Escape</a>
     <form class="d-flex" role="search">
         Buscar por temática
         <select class="form-select text-light bg-dark border-bottom border-bottom-dark" data-bs-theme="dark" aria-label="Default select example">

@@ -12,9 +12,14 @@ if (!empty($_GET['action'])) {
 $params = explode('/', $accion);
 
 switch ($params[0]) {
-    case 'rooms':
-        $roomController = new RoomController();
-        $roomController->showAllRooms();
+    case 'rooms' || 'router.php':
+        if (isset($params[1])){
+            $roomController = new RoomController();
+            $roomController->showARoom($params[1]);
+        }else{
+            $roomController = new RoomController();
+            $roomController->showAllRooms();
+        }
         break;
     default:
         echo ('404 page not found');

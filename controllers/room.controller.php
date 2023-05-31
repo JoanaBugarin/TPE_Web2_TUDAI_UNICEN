@@ -19,4 +19,12 @@ class RoomController {
         else
             $this-> view -> showError('No hay salas');
     }
+
+    public function showARoom($id) {
+        $room = $this-> model-> getRoomById($id);
+        if (!empty($room))
+            $this-> view -> showRoom($room[0]);
+        else
+            $this-> view -> showError('No hay Salas');
+    }
 }

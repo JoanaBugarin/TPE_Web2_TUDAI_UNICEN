@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-05-31 00:52:04
+/* Smarty version 4.3.1, created on 2023-05-31 04:02:04
   from 'C:\xampp\htdocs\TPE_Web2_TUDAI_UNICEN\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_64767e14c4cf62_54450180',
+  'unifunc' => 'content_6476aa9c00f404_38766811',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'be30b7c34fc179184c97d6448f063224756ceb1b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE_Web2_TUDAI_UNICEN\\templates\\header.tpl',
-      1 => 1685486748,
+      1 => 1685498518,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64767e14c4cf62_54450180 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6476aa9c00f404_38766811 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +39,7 @@ function content_64767e14c4cf62_54450180 (Smarty_Internal_Template $_smarty_tpl)
 <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-bottom-dark" data-bs-theme="dark">
   <div class="container-fluid">
     <img src="https://i.imgur.com/Ji2Odzw.jpg" alt="Logo Get Out" width="55" height="50" class="d-inline-block align-text-top">
-    <a class="navbar-brand text-light" href="#">Salas de Escape</a>
+    <a class="navbar-brand text-light" href="http://localhost/TPE_Web2_TUDAI_UNICEN/">Salas de Escape</a>
     <form class="d-flex" role="search">
         Buscar por temática
         <select class="form-select text-light bg-dark border-bottom border-bottom-dark" data-bs-theme="dark" aria-label="Default select example">

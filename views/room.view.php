@@ -21,6 +21,11 @@ class RoomView {
         $this->smarty->assign('rooms', $roomsNoActive);
         $this->smarty->display('templates/rooms.tpl');
     }
+
+    public function showRoom($room) {
+        $this->smarty->assign('room', $room);
+        $this->smarty->display('templates/room.tpl');
+    }
     
     public function showError($msgError) {
         echo $msgError;
