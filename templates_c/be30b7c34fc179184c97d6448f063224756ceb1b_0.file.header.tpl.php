@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-05-31 04:02:04
+/* Smarty version 4.3.1, created on 2023-06-01 04:55:41
   from 'C:\xampp\htdocs\TPE_Web2_TUDAI_UNICEN\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6476aa9c00f404_38766811',
+  'unifunc' => 'content_647808ad4d51c1_10796873',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'be30b7c34fc179184c97d6448f063224756ceb1b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE_Web2_TUDAI_UNICEN\\templates\\header.tpl',
-      1 => 1685498518,
+      1 => 1685588119,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6476aa9c00f404_38766811 (Smarty_Internal_Template $_smarty_tpl) {
+function content_647808ad4d51c1_10796873 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +31,7 @@ function content_6476aa9c00f404_38766811 (Smarty_Internal_Template $_smarty_tpl)
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="http://localhost/TPE_Web2_TUDAI_UNICEN/css/style.css">
     <title>Scape Room</title>
 </head>
 <body>
@@ -53,8 +53,8 @@ function content_6476aa9c00f404_38766811 (Smarty_Internal_Template $_smarty_tpl)
 </nav>
 <div class="d-flex flex-row-reverse">
     <div class="btn-group">
-        <a href="#" class="btn btn-primary">+ Sala</a>
-        <a href="#" class="btn btn-primary">+ Temática</a>
+        <a href="router/form-nueva-sala" class="btn btn-primary">+ Sala</a>
+        <a href="router/form-nueva-tematica" class="btn btn-primary">+ Temática</a>
     </div>
 </div><?php }
 }

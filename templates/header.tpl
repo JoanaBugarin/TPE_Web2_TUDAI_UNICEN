@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="http://localhost/TPE_Web2_TUDAI_UNICEN/css/style.css">
     <title>Scape Room</title>
 </head>
 <body>
@@ -28,7 +28,7 @@
 </nav>
 <div class="d-flex flex-row-reverse">
     <div class="btn-group">
-        <a href="#" class="btn btn-primary">+ Sala</a>
-        <a href="#" class="btn btn-primary">+ Temática</a>
+        <a href="router/form-nueva-sala" class="btn btn-primary">+ Sala</a>
+        <a href="router/form-nueva-tematica" class="btn btn-primary">+ Temática</a>
     </div>
 </div>

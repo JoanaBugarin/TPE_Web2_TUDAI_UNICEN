@@ -16,8 +16,12 @@ img.img-carr {
     text-align: center;
 }
 
-.btn {
+.btn-rooms {
     margin-bottom: 50px;
+}
+
+.margen-footer {
+    margin-bottom: 174px;
 }
 
 div.btn-group.d-flex {
@@ -39,15 +43,9 @@ section.first-section {
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
     width: 100%;
 }
 
-.second-section {
-    text-align: center;
-}
-
-section.room {
+.centrado {
     text-align: center;
 }

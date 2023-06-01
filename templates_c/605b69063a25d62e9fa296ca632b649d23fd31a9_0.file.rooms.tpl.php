@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-05-31 01:01:30
+/* Smarty version 4.3.1, created on 2023-06-01 07:18:08
   from 'C:\xampp\htdocs\TPE_Web2_TUDAI_UNICEN\templates\rooms.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6476804ac55217_42340097',
+  'unifunc' => 'content_64782a1028ac77_92345850',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '605b69063a25d62e9fa296ca632b649d23fd31a9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE_Web2_TUDAI_UNICEN\\templates\\rooms.tpl',
-      1 => 1685487687,
+      1 => 1685596677,
       2 => 'file',
     ),
   ),
@@ -22,18 +22,28 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6476804ac55217_42340097 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64782a1028ac77_92345850 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
   <main class="container mt-5">
     <div id="carouselExampleIndicators" class="carousel slide">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 0"></button>
+        <?php ob_start();
+echo $_smarty_tpl->tpl_vars['limit']->value;
+$_prefixVariable1 = ob_get_clean();
+$_smarty_tpl->tpl_vars['ini'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['ini']->step = 1;$_smarty_tpl->tpl_vars['ini']->total = (int) ceil(($_smarty_tpl->tpl_vars['ini']->step > 0 ? $_prefixVariable1+1 - (1) : 1-($_prefixVariable1)+1)/abs($_smarty_tpl->tpl_vars['ini']->step));
+if ($_smarty_tpl->tpl_vars['ini']->total > 0) {
+for ($_smarty_tpl->tpl_vars['ini']->value = 1, $_smarty_tpl->tpl_vars['ini']->iteration = 1;$_smarty_tpl->tpl_vars['ini']->iteration <= $_smarty_tpl->tpl_vars['ini']->total;$_smarty_tpl->tpl_vars['ini']->value += $_smarty_tpl->tpl_vars['ini']->step, $_smarty_tpl->tpl_vars['ini']->iteration++) {
+$_smarty_tpl->tpl_vars['ini']->first = $_smarty_tpl->tpl_vars['ini']->iteration === 1;$_smarty_tpl->tpl_vars['ini']->last = $_smarty_tpl->tpl_vars['ini']->iteration === $_smarty_tpl->tpl_vars['ini']->total;?>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?php echo $_smarty_tpl->tpl_vars['ini']->value;?>
+" aria-label="Slide ".<?php echo $_smarty_tpl->tpl_vars['ini']->value+1;?>
+></button>
+        <?php }
+}
+?>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?php echo $_smarty_tpl->tpl_vars['limit']->value;?>
+" aria-label="Slide 0"></button>
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -45,11 +55,11 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 </h5>
               <p class="card-text"><?php echo $_smarty_tpl->tpl_vars['roomActive']->value->description;?>
 </p>
-              <a class="btn btn-primary" href="./router/<?php echo $_smarty_tpl->tpl_vars['roomActive']->value->id;?>
+              <a class="btn btn-rooms btn-primary" href="router/mostrar-sala/<?php echo $_smarty_tpl->tpl_vars['roomActive']->value->id;?>
 ">Ver más</a>
-              <a class="btn btn-warning" href="./router/update/<?php echo $_smarty_tpl->tpl_vars['roomActive']->value->id;?>
+              <a class="btn btn-rooms btn-warning" href="router/actualizar-sala/<?php echo $_smarty_tpl->tpl_vars['roomActive']->value->id;?>
 ">Actualizar</a>
-              <a class="btn btn-danger" href="./router/delete/<?php echo $_smarty_tpl->tpl_vars['roomActive']->value->id;?>
+              <a class="btn btn-rooms btn-danger" href="router/eliminar-sala/<?php echo $_smarty_tpl->tpl_vars['roomActive']->value->id;?>
 ">Eliminar</a>
             </div>
           </div>
@@ -69,11 +79,11 @@ $_smarty_tpl->tpl_vars['room']->do_else = false;
 </h5>
               <p class="card-text"><?php echo $_smarty_tpl->tpl_vars['room']->value->description;?>
 </p>
-              <a class="btn btn-primary" href="./router/<?php echo $_smarty_tpl->tpl_vars['room']->value->id;?>
+              <a class="btn btn-rooms btn-primary" href="router/mostrar-sala/<?php echo $_smarty_tpl->tpl_vars['room']->value->id;?>
 ">Ver más</a>
-              <a class="btn btn-warning" href="./router/update/<?php echo $_smarty_tpl->tpl_vars['room']->value->id;?>
+              <a class="btn btn-rooms btn-warning" href="router/actualizar-sala/<?php echo $_smarty_tpl->tpl_vars['room']->value->id;?>
 ">Actualizar</a>
-              <a class="btn btn-danger" href="./router/delete/<?php echo $_smarty_tpl->tpl_vars['room']->value->id;?>
+              <a class="btn btn-rooms btn-danger" href="router/eliminar-sala/<?php echo $_smarty_tpl->tpl_vars['room']->value->id;?>
 ">Eliminar</a>
             </div>
           </div>
@@ -93,7 +103,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </div>
   </main>
 </section>
-<section class="second-section">
+<section class="centrado margen-footer">
   <h2 class="mt-1">Nuestras temáticas</h2>
   <div d-flex justify-content-evenly>
     <?php

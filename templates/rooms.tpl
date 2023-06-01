@@ -3,11 +3,10 @@
     <div id="carouselExampleIndicators" class="carousel slide">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 0"></button>
+        {for $ini=1 to {$limit}  }
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{$ini}" aria-label="Slide ".{$ini+1}></button>
+        {/for}
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{$limit}" aria-label="Slide 0"></button>
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -16,9 +15,9 @@
             <div>
               <h5 class="card-title">{$roomActive->name}</h5>
               <p class="card-text">{$roomActive->description}</p>
-              <a class="btn btn-primary" href="./router/{$roomActive->id}">Ver más</a>
-              <a class="btn btn-warning" href="./router/update/{$roomActive->id}">Actualizar</a>
-              <a class="btn btn-danger" href="./router/delete/{$roomActive->id}">Eliminar</a>
+              <a class="btn btn-rooms btn-primary" href="router/mostrar-sala/{$roomActive->id}">Ver más</a>
+              <a class="btn btn-rooms btn-warning" href="router/actualizar-sala/{$roomActive->id}">Actualizar</a>
+              <a class="btn btn-rooms btn-danger" href="router/eliminar-sala/{$roomActive->id}">Eliminar</a>
             </div>
           </div>
         </div>    
@@ -29,9 +28,9 @@
             <div>
               <h5 class="card-title">{$room->name}</h5>
               <p class="card-text">{$room->description}</p>
-              <a class="btn btn-primary" href="./router/{$room->id}">Ver más</a>
-              <a class="btn btn-warning" href="./router/update/{$room->id}">Actualizar</a>
-              <a class="btn btn-danger" href="./router/delete/{$room->id}">Eliminar</a>
+              <a class="btn btn-rooms btn-primary" href="router/mostrar-sala/{$room->id}">Ver más</a>
+              <a class="btn btn-rooms btn-warning" href="router/actualizar-sala/{$room->id}">Actualizar</a>
+              <a class="btn btn-rooms btn-danger" href="router/eliminar-sala/{$room->id}">Eliminar</a>
             </div>
           </div>
         </div>    
@@ -48,7 +47,7 @@
     </div>
   </main>
 </section>
-<section class="second-section">
+<section class="centrado margen-footer">
   <h2 class="mt-1">Nuestras temáticas</h2>
   <div d-flex justify-content-evenly>
     {foreach from=$themes item=$theme}

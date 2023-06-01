@@ -1,6 +1,6 @@
 {include file="header.tpl"}
-<main class="container mt-5">
-    <section class="room">
+<main class="container mt-5 margen-footer">
+    <section class="centrado">
         <h1>{$room->name}</h1>
         <p>{$room->description}</p>
         <img src="{$room->image}"/>
