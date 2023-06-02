@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-06-01 07:18:08
+/* Smarty version 4.3.1, created on 2023-06-02 03:12:02
   from 'C:\xampp\htdocs\TPE_Web2_TUDAI_UNICEN\templates\rooms.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_64782a1028ac77_92345850',
+  'unifunc' => 'content_647941e27e05b2_94144021',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '605b69063a25d62e9fa296ca632b649d23fd31a9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE_Web2_TUDAI_UNICEN\\templates\\rooms.tpl',
-      1 => 1685596677,
+      1 => 1685667555,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_64782a1028ac77_92345850 (Smarty_Internal_Template $_smarty_tpl) {
+function content_647941e27e05b2_94144021 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
   <main class="container mt-5">
@@ -57,7 +57,7 @@ $_smarty_tpl->tpl_vars['ini']->first = $_smarty_tpl->tpl_vars['ini']->iteration 
 </p>
               <a class="btn btn-rooms btn-primary" href="router/mostrar-sala/<?php echo $_smarty_tpl->tpl_vars['roomActive']->value->id;?>
 ">Ver más</a>
-              <a class="btn btn-rooms btn-warning" href="router/actualizar-sala/<?php echo $_smarty_tpl->tpl_vars['roomActive']->value->id;?>
+              <a class="btn btn-rooms btn-warning" href="router/form-actualizar-sala/<?php echo $_smarty_tpl->tpl_vars['roomActive']->value->id;?>
 ">Actualizar</a>
               <a class="btn btn-rooms btn-danger" href="router/eliminar-sala/<?php echo $_smarty_tpl->tpl_vars['roomActive']->value->id;?>
 ">Eliminar</a>
@@ -81,7 +81,7 @@ $_smarty_tpl->tpl_vars['room']->do_else = false;
 </p>
               <a class="btn btn-rooms btn-primary" href="router/mostrar-sala/<?php echo $_smarty_tpl->tpl_vars['room']->value->id;?>
 ">Ver más</a>
-              <a class="btn btn-rooms btn-warning" href="router/actualizar-sala/<?php echo $_smarty_tpl->tpl_vars['room']->value->id;?>
+              <a class="btn btn-rooms btn-warning" href="router/form-actualizar-sala/<?php echo $_smarty_tpl->tpl_vars['room']->value->id;?>
 ">Actualizar</a>
               <a class="btn btn-rooms btn-danger" href="router/eliminar-sala/<?php echo $_smarty_tpl->tpl_vars['room']->value->id;?>
 ">Eliminar</a>

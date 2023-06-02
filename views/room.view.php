@@ -28,11 +28,25 @@ class RoomView {
         $this->smarty->display('templates/room.tpl');
     }
 
-    public function showForm($method, $title, $action) {
+    public function showForm($method, $title, $action, $nombrePrevio, $descripcionPrevia,
+    $capacidadPrevia, $idTematicaPrevia, $dificultadPrevia, $tiempoPrevio, $imagenPrevia) {
         $this->smarty->assign('method', $method);
         $this->smarty->assign('title', $title);
         $this->smarty->assign('action', $action);
+        $this->smarty->assign('nombrePrevio', $nombrePrevio);
+        $this->smarty->assign('descripcionPrevia', $descripcionPrevia);
+        $this->smarty->assign('capacidadPrevia', $capacidadPrevia);
+        $this->smarty->assign('idTematicaPrevia', $idTematicaPrevia);
+        $this->smarty->assign('dificultadPrevia', $dificultadPrevia);
+        $this->smarty->assign('tiempoPrevio', $tiempoPrevio);
+        $this->smarty->assign('imagenPrevia', $imagenPrevia);
         $this->smarty->display('templates/genericForm.tpl');
+    }
+
+    public function showMsg($tipoAlerta, $mensaje) {
+        $this->smarty->assign('tipoAlerta', $tipoAlerta);
+        $this->smarty->assign('mensaje', $mensaje);
+        $this->smarty->display('templates/msg.tpl');
     }
     
     public function showError($msgError) {

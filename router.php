@@ -22,11 +22,21 @@ switch ($params[0]) {
                 case 'mostrar-sala':
                     $roomController = new RoomController();
                     $roomController->showARoom($params[2]);
-                case 'actualizar-sala':
-                    echo ('en proceso');
+                case 'form-actualizar-sala':
+                    if (isset($params[3])) {
+                        $roomController = new RoomController();
+                        $roomController->changeRoom($params[2]);
+                    }
+                    $roomController = new RoomController();
+                    $roomController->showGenericForm($params[2],'POST', 'Actualizar Sala de Escape', '../form-actualizar-sala/'.$params[2].'/cambiar-sala');
                     break;
                 case 'eliminar-sala':
-                    echo ('en proceso');
+                    if (isset($params[3])) {
+                        $roomController = new RoomController();
+                        $roomController->confirmDelete($params[2]);
+                    }
+                    $roomController = new RoomController();
+                    $roomController->deleteARoom($params[2]);
                     break;
                 case 'form-nueva-sala':
                     if (isset($params[2])) {
@@ -34,7 +44,7 @@ switch ($params[0]) {
                         $roomController->createRoom();
                     }
                     $roomController = new RoomController();
-                    $roomController->showGenericForm('POST', 'Nueva Sala de Escape', '../router/form-nueva-sala/crear-sala');
+                    $roomController->showGenericForm(null,'POST', 'Nueva Sala de Escape', '../router/form-nueva-sala/crear-sala');
                     break;
                 case 'form-nueva-tematica':
                     echo ('en proceso');

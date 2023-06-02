@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-06-01 06:18:24
+/* Smarty version 4.3.1, created on 2023-06-02 03:47:52
   from 'C:\xampp\htdocs\TPE_Web2_TUDAI_UNICEN\templates\genericForm.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_64781c102164f7_27275219',
+  'unifunc' => 'content_64794a4883c542_56930272',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1de7dc50c03d39374bce0b9e091906cc38691c29' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE_Web2_TUDAI_UNICEN\\templates\\genericForm.tpl',
-      1 => 1685593067,
+      1 => 1685668505,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_64781c102164f7_27275219 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64794a4883c542_56930272 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <h1 class="centrado"><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
@@ -32,40 +32,47 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 ' action='<?php echo $_smarty_tpl->tpl_vars['action']->value;?>
 '>
             <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" id="nombre" name="nombre" class="form-control" aria-labelledby="HelpBlockNombre">
+            <input type="text" id="nombre" name="nombre" class="form-control" aria-labelledby="HelpBlockNombre"  value="<?php echo $_smarty_tpl->tpl_vars['nombrePrevio']->value;?>
+">
             <div id="HelpBlockNombre" class="form-text">
                 Máximo 200 caracteres
             </div>
 
             <label for="descripcion" class="form-label">Descripción</label>
-            <input type="text" id="descripcion" name="descripcion" class="form-control" aria-labelledby="HelpBlockDescripcion">
+            <input type="text" id="descripcion" name="descripcion" class="form-control" aria-labelledby="HelpBlockDescripcion" value="<?php echo $_smarty_tpl->tpl_vars['descripcionPrevia']->value;?>
+">
 
             <label for="capacidad" class="form-label">Capacidad</label>
-            <input type="number" id="capacidad" name="capacidad" class="form-control" aria-labelledby="HelpBlockCapacidad">
+            <input type="number" id="capacidad" name="capacidad" class="form-control" aria-labelledby="HelpBlockCapacidad" value="<?php echo $_smarty_tpl->tpl_vars['capacidadPrevia']->value;?>
+">
             <div id="HelpBlockCapacidad" class="form-text">
                 Número de personas para quienes está pensada la sala
             </div>
 
             <label for="theme_id" class="form-label">Id de la temática</label>
-            <input type="number" id="theme_id" name="id_tematica" class="form-control" aria-labelledby="HelpBlockThemeId">
+            <input type="number" id="theme_id" name="id_tematica" class="form-control" aria-labelledby="HelpBlockThemeId" value="<?php echo $_smarty_tpl->tpl_vars['idTematicaPrevia']->value;?>
+">
             <div id="HelpBlockThemeId" class="form-text">
                 Id (número) que identifica a la temática a la que pertenece la sala
             </div>
 
             <label for="difficulty" class="form-label">Dificultad</label>
-            <input type="text" id="difficulty" name="dificultad" class="form-control" aria-labelledby="HelpBlockDificultad">
+            <input type="text" id="difficulty" name="dificultad" class="form-control" aria-labelledby="HelpBlockDificultad" value="<?php echo $_smarty_tpl->tpl_vars['dificultadPrevia']->value;?>
+">
             <div id="HelpBlockDificultad" class="form-text">
                 Máximo 100 caracteres
             </div>
 
             <label for="time" class="form-label">Tiempo</label>
-            <input type="number" id="time" name="tiempo" class="form-control" aria-labelledby="HelpBlockTiempo">
+            <input type="number" id="time" name="tiempo" class="form-control" aria-labelledby="HelpBlockTiempo" value="<?php echo $_smarty_tpl->tpl_vars['tiempoPrevio']->value;?>
+">
             <div id="HelpBlockTiempo" class="form-text">
                 Tiempo en minutos que toma completar la sala
             </div>
 
             <label for="image" class="form-label">Imagen</label>
-            <input type="text" id="image" name="imagen" class="form-control" aria-labelledby="HelpBlockImage">
+            <input type="text" id="image" name="imagen" class="form-control" aria-labelledby="HelpBlockImage" value="<?php echo $_smarty_tpl->tpl_vars['imagenPrevia']->value;?>
+">
             <div id="HelpBlockImage" class="form-text">
                 Url de la imagen de la sala
             </div>

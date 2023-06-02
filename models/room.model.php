@@ -34,16 +34,37 @@ class RoomModel {
     }
 
     public function insertRoom($name, $description, $capacity, $theme_id, $difficulty, $time, $image) {
-        $sql = 'INSERT INTO rooms (name, description, capacity, theme_id, difficulty, time, image) VALUES (:name, :description, :capacity, :theme_id, :difficulty, :time, :image)';
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindParam(':name', $name);
-        $stmt->bindParam(':description', $description);
-        $stmt->bindParam(':capacity', $capacity);
-        $stmt->bindParam(':theme_id', $theme_id);
-        $stmt->bindParam(':difficulty', $difficulty);
-        $stmt->bindParam(':time', $time);
-        $stmt->bindParam(':image', $image);
-        $stmt->execute();
-        return $stmt->rowCount() > 0;  
+        $sentencia = 'INSERT INTO rooms (name, description, capacity, theme_id, difficulty, time, image) VALUES (:name, :description, :capacity, :theme_id, :difficulty, :time, :image)';
+        $sql = $this->db->prepare($sentencia);
+        $sql->bindParam(':name', $name);
+        $sql->bindParam(':description', $description);
+        $sql->bindParam(':capacity', $capacity);
+        $sql->bindParam(':theme_id', $theme_id);
+        $sql->bindParam(':difficulty', $difficulty);
+        $sql->bindParam(':time', $time);
+        $sql->bindParam(':image', $image);
+        $sql->execute();
+        return $sql->rowCount() > 0;  
+    }
+
+    public function updateRoom($name, $desc, $cap, $id_the, $diff, $time, $img, $id) {
+        $sentencia = 'UPDATE rooms SET name = :name, description = :description, capacity = :capacity, theme_id = :theme_id, difficulty = :difficulty, time = :time, image = :image WHERE id = :id';
+        $sql = $this->db->prepare($sentencia);
+        $sql->bindParam(':name', $name);
+        $sql->bindParam(':description', $desc);
+        $sql->bindParam(':capacity', $cap);
+        $sql->bindParam(':theme_id', $id_the);
+        $sql->bindParam(':difficulty', $diff);
+        $sql->bindParam(':time', $time);
+        $sql->bindParam(':image', $img);
+        $sql->bindParam(':id', $id);
+        $sql->execute();
+        return $sql->rowCount() > 0;
+    }
+
+    public function deleteRoomById($id) {
+        $sql = $this->db->prepare('DELETE FROM rooms WHERE id = ?');
+        $sql->execute([$id]);
+        return $sql->rowCount() > 0;
     }
 }

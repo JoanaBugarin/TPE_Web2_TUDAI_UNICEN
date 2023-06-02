@@ -16,7 +16,7 @@
               <h5 class="card-title">{$roomActive->name}</h5>
               <p class="card-text">{$roomActive->description}</p>
               <a class="btn btn-rooms btn-primary" href="router/mostrar-sala/{$roomActive->id}">Ver más</a>
-              <a class="btn btn-rooms btn-warning" href="router/actualizar-sala/{$roomActive->id}">Actualizar</a>
+              <a class="btn btn-rooms btn-warning" href="router/form-actualizar-sala/{$roomActive->id}">Actualizar</a>
               <a class="btn btn-rooms btn-danger" href="router/eliminar-sala/{$roomActive->id}">Eliminar</a>
             </div>
           </div>
@@ -29,7 +29,7 @@
               <h5 class="card-title">{$room->name}</h5>
               <p class="card-text">{$room->description}</p>
               <a class="btn btn-rooms btn-primary" href="router/mostrar-sala/{$room->id}">Ver más</a>
-              <a class="btn btn-rooms btn-warning" href="router/actualizar-sala/{$room->id}">Actualizar</a>
+              <a class="btn btn-rooms btn-warning" href="router/form-actualizar-sala/{$room->id}">Actualizar</a>
               <a class="btn btn-rooms btn-danger" href="router/eliminar-sala/{$room->id}">Eliminar</a>
             </div>
           </div>
