@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-06-02 03:12:02
+/* Smarty version 4.3.1, created on 2023-06-11 18:12:51
   from 'C:\xampp\htdocs\TPE_Web2_TUDAI_UNICEN\templates\rooms.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_647941e27e05b2_94144021',
+  'unifunc' => 'content_6485f283947e59_58215889',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '605b69063a25d62e9fa296ca632b649d23fd31a9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE_Web2_TUDAI_UNICEN\\templates\\rooms.tpl',
-      1 => 1685667555,
+      1 => 1686499969,
       2 => 'file',
     ),
   ),
@@ -22,9 +22,29 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_647941e27e05b2_94144021 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6485f283947e59_58215889 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
+<div class="d-flex flex-row-reverse">
+<form class="d-flex" role="search" method="GET" action="router/mostrar-salas-por-tematica">
+  <select name="select-theme" class="form-select text-light bg-dark border-bottom border-bottom-dark form-select-sm buscar" data-bs-theme="dark" aria-label="Default select example">
+    <option selected>Todas</option>
+    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['themes']->value, 'theme');
+$_smarty_tpl->tpl_vars['theme']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['theme']->value) {
+$_smarty_tpl->tpl_vars['theme']->do_else = false;
+?>
+    <option value="<?php echo $_smarty_tpl->tpl_vars['theme']->value->id;?>
+"><?php echo $_smarty_tpl->tpl_vars['theme']->value->name;?>
+</option>
+    <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+  </select>
+  <button type="submit" class="btn btn-primary mb-3">Buscar</button>
+</form>
+</div>
   <main class="container mt-5">
     <div id="carouselExampleIndicators" class="carousel slide">
       <div class="carousel-indicators">
@@ -105,7 +125,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </section>
 <section class="centrado margen-footer">
   <h2 class="mt-1">Nuestras temáticas</h2>
-  <div d-flex justify-content-evenly>
+  <div class="d-flex justify-content-evenly">
     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['themes']->value, 'theme');
 $_smarty_tpl->tpl_vars['theme']->do_else = true;
@@ -115,8 +135,12 @@ $_smarty_tpl->tpl_vars['theme']->do_else = false;
     <div class="themes">
       <h3><?php echo $_smarty_tpl->tpl_vars['theme']->value->name;?>
 </h3>
-      <a class="btn btn-primary" href="./router/<?php echo $_smarty_tpl->tpl_vars['theme']->value->id;?>
+      <a class="btn btn-rooms btn-primary" href="./router/mostrar-tematica/<?php echo $_smarty_tpl->tpl_vars['theme']->value->id;?>
 ">Conocer más</a>
+      <a class="btn btn-rooms btn-warning" href="./router/form-actualizar-tematica/<?php echo $_smarty_tpl->tpl_vars['theme']->value->id;?>
+">Actualizar</a>
+      <a class="btn btn-rooms btn-danger" href="./router/eliminar-tematica/<?php echo $_smarty_tpl->tpl_vars['theme']->value->id;?>
+">Eliminar</a>
     </div>
     <?php
 }

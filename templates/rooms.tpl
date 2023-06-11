@@ -1,4 +1,15 @@
 {include file="header.tpl"}
+<div class="d-flex flex-row-reverse">
+<form class="d-flex" role="search" method="GET" action="router/mostrar-salas-por-tematica">
+  <select name="select-theme" class="form-select text-light bg-dark border-bottom border-bottom-dark form-select-sm buscar" data-bs-theme="dark" aria-label="Default select example">
+    <option selected>Todas</option>
+    {foreach from=$themes  item=$theme}
+    <option value="{$theme->id}">{$theme->name}</option>
+    {/foreach}
+  </select>
+  <button type="submit" class="btn btn-primary mb-3">Buscar</button>
+</form>
+</div>
   <main class="container mt-5">
     <div id="carouselExampleIndicators" class="carousel slide">
       <div class="carousel-indicators">
@@ -49,11 +60,13 @@
 </section>
 <section class="centrado margen-footer">
   <h2 class="mt-1">Nuestras temáticas</h2>
-  <div d-flex justify-content-evenly>
+  <div class="d-flex justify-content-evenly">
     {foreach from=$themes item=$theme}
     <div class="themes">
       <h3>{$theme->name}</h3>
-      <a class="btn btn-primary" href="./router/{$theme->id}">Conocer más</a>
+      <a class="btn btn-rooms btn-primary" href="./router/mostrar-tematica/{$theme->id}">Conocer más</a>
+      <a class="btn btn-rooms btn-warning" href="./router/form-actualizar-tematica/{$theme->id}">Actualizar</a>
+      <a class="btn btn-rooms btn-danger" href="./router/eliminar-tematica/{$theme->id}">Eliminar</a>
     </div>
     {/foreach}
   </div>

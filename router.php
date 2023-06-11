@@ -2,6 +2,7 @@
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
 require_once('controllers/room.controller.php');
+require_once('controllers/theme.controller.php');
 
 if (!empty($_GET['action'])) {
     $accion = $_GET['action'];
@@ -22,10 +23,16 @@ switch ($params[0]) {
                 case 'mostrar-sala':
                     $roomController = new RoomController();
                     $roomController->showARoom($params[2]);
+                    break;
+                case 'mostrar-salas-por-tematica':
+                    $roomController = new RoomController();
+                    $roomController->showRoomsByTheme();
+                    break;
                 case 'form-actualizar-sala':
                     if (isset($params[3])) {
                         $roomController = new RoomController();
                         $roomController->changeRoom($params[2]);
+                        break;
                     }
                     $roomController = new RoomController();
                     $roomController->showGenericForm($params[2],'POST', 'Actualizar Sala de Escape', '../form-actualizar-sala/'.$params[2].'/cambiar-sala');
@@ -34,6 +41,7 @@ switch ($params[0]) {
                     if (isset($params[3])) {
                         $roomController = new RoomController();
                         $roomController->confirmDelete($params[2]);
+                        break;
                     }
                     $roomController = new RoomController();
                     $roomController->deleteARoom($params[2]);
@@ -42,17 +50,25 @@ switch ($params[0]) {
                     if (isset($params[2])) {
                         $roomController = new RoomController();
                         $roomController->createRoom();
+                        break;
                     }
                     $roomController = new RoomController();
                     $roomController->showGenericForm(null,'POST', 'Nueva Sala de Escape', '../router/form-nueva-sala/crear-sala');
                     break;
                 case 'form-nueva-tematica':
-                    echo ('en proceso');
+                    if (isset($params[2])) {
+                        $themeController = new ThemeController();
+                        $themeController->createTheme();
+                        break;
+                    }
+                    $themeController = new ThemeController();
+                    $themeController->showGenericThemeForm(null,'POST', 'Nueva Temática', '../router/form-nueva-tematica/crear-tematica');
                     break;
                 case 'mostrar-tematica':
-                    echo ('en proceso');
+                    $themeController = new ThemeController();
+                    $themeController->showATheme($params[2]);
                     break;
-                case 'actualizar-tematica':
+                case 'form-actualizar-tematica':
                     echo ('en proceso');
                     break;
                 case 'eliminar-tematica':

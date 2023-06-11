@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-06-01 04:55:41
+/* Smarty version 4.3.1, created on 2023-06-05 19:05:48
   from 'C:\xampp\htdocs\TPE_Web2_TUDAI_UNICEN\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_647808ad4d51c1_10796873',
+  'unifunc' => 'content_647e15ecea8a90_74725536',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'be30b7c34fc179184c97d6448f063224756ceb1b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE_Web2_TUDAI_UNICEN\\templates\\header.tpl',
-      1 => 1685588119,
+      1 => 1685984718,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_647808ad4d51c1_10796873 (Smarty_Internal_Template $_smarty_tpl) {
+function content_647e15ecea8a90_74725536 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,15 +40,7 @@ function content_647808ad4d51c1_10796873 (Smarty_Internal_Template $_smarty_tpl)
   <div class="container-fluid">
     <img src="https://i.imgur.com/Ji2Odzw.jpg" alt="Logo Get Out" width="55" height="50" class="d-inline-block align-text-top">
     <a class="navbar-brand text-light" href="http://localhost/TPE_Web2_TUDAI_UNICEN/">Salas de Escape</a>
-    <form class="d-flex" role="search">
-        Buscar por temática
-        <select class="form-select text-light bg-dark border-bottom border-bottom-dark" data-bs-theme="dark" aria-label="Default select example">
-            <option selected>Todas</option>
-            <option value="1">Terror</option>
-            <option value="2">Aventura</option>
-            <option value="3">Acción</option>
-        </select>
-    </form>
+    
   </div>
 </nav>
 <div class="d-flex flex-row-reverse">

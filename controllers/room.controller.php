@@ -1,20 +1,24 @@
 <?php
 include_once('models/room.model.php');
 include_once('views/room.view.php');
+include_once('controllers/theme.controller.php');
 
 class RoomController {
     private $model;
     private $view;
+    private $themeController;
 
     public function __construct() {
         $this->model = new RoomModel();
         $this->view = new RoomView();
+        $this->themeController = new ThemeController();
     }
 
     public function showAllRooms() {
         $rooms = $this-> model-> getRooms();
+        $themes =  $this-> themeController->showAllThemes();
         if (!empty($rooms)) {
-            $this-> view -> showRooms($rooms, count($rooms)-1);
+            $this-> view -> showRooms($rooms, count($rooms)-1,  $themes);
         } else {
             $this-> view -> showError('No hay salas');
         }
@@ -68,15 +72,7 @@ class RoomController {
         }
     }
 
-    public function changeRoom($id) { // ¿Qué hacemos con el PUT?
-        //$data = file_get_contents("php://input");
-
-		//if($data == false)
-		//	print_r("Nada");
-
-		//parse_str($data, $result);
-
-        //print_r($result);
+    public function changeRoom($id) {
         if(isset($_POST['nombre']) && isset($_POST['descripcion'])
         && isset($_POST['capacidad']) && isset($_POST['id_tematica'])
         && isset($_POST['dificultad']) && isset($_POST['tiempo'])
@@ -106,6 +102,18 @@ class RoomController {
             $this->showAllRooms();
         } else {
             $this->view -> showMsg('danger', '¡BORRADO FALLÓ');
+        }
+    }
+
+    public function showRoomsByTheme() {
+        if(isset($_GET['select-theme'])) {
+            $theme = $_GET['select-theme'];
+            $rooms = $this-> model ->getRoomsByTheme($theme);
+            if (!empty($rooms)) {
+                $this-> view -> showRoomsOfTheme($rooms);
+            } else {
+                $this-> view -> showError('No hay salas');
+            }
         }
     }
 }

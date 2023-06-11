@@ -67,4 +67,12 @@ class RoomModel {
         $sql->execute([$id]);
         return $sql->rowCount() > 0;
     }
+
+    public function getRoomsByTheme($theme_id) {
+        $sql = $this->db->prepare('SELECT rooms.*, themes.name as theme FROM rooms JOIN themes
+        ON rooms.theme_id = themes.id
+        WHERE rooms.theme_id = ?');
+        $sql->execute([$theme_id]);
+        return $sql->fetchAll(PDO::FETCH_OBJ);
+    }
 }
