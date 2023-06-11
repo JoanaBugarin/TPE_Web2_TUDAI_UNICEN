@@ -1,14 +1,17 @@
 <?php
 include_once('models/theme.model.php');
 include_once('views/theme.view.php');
+include_once('controllers/room.controller.php');
 
 class ThemeController {
     private $model;
     private $view;
+    private $authHelper;
 
     public function __construct() {
         $this->model = new ThemeModel();
         $this->view = new ThemeView();
+        $this->authHelper = new AuthHelper();
     }
 
     public function showAllThemes() {
@@ -28,6 +31,7 @@ class ThemeController {
     }
 
     public function showGenericThemeForm($id,$method, $title, $action) {
+        $this->authHelper->checkLoggedIn();
         if ($title == 'Nueva Temática') {
             $values = "";
             $this-> view -> showForm($method, $title, $action, $values,
@@ -42,6 +46,7 @@ class ThemeController {
     }
 
     public function createTheme() {
+        $this->authHelper->checkLoggedIn();
         if(isset($_POST['nombre']) && isset($_POST['clasificacion'])) {
             $modifiedRow = $this-> model-> insertTheme($_POST['nombre'],$_POST['clasificacion']);
             if($modifiedRow) {
@@ -51,6 +56,36 @@ class ThemeController {
             }
         } else {
             $this-> view -> showMsg('danger','Todos los campos son obligatorios');
+        }
+    }
+
+    public function changeTheme($id) {
+        $this->authHelper->checkLoggedIn();
+        if(isset($_POST['nombre']) && isset($_POST['clasificacion'])) {
+            $modifiedRow = $this-> model-> updateTheme($_POST['nombre'],$_POST['clasificacion'], $id);
+            if($modifiedRow) {
+                $this->view->showMsg('success', '¡ACTUALIZACIÓN EXITOSA!');
+            } else {
+                $this->view -> showMsg('danger', '¡ACTUALIZACIÓN FALLÓ');
+            }
+        } else {
+            $this-> view -> showMsg('danger','Todos los campos son obligatorios');
+        }
+    }
+
+    public function deleteATheme($id) {
+        $this->authHelper->checkLoggedIn();
+        $this->view-> showMsg('danger', '¿Seguro que desea eliminar esta temática? <a href="../eliminar-tematica/'.$id.'/confirmar-borrado" class="btn btn-danger">Confirmar</a>');
+        $this->showATheme($id);
+    }
+
+    public function confirmDelete($id) {
+        $this->authHelper->checkLoggedIn();
+        $modifiedRow = $this->model->deleteThemeById($id);
+        if($modifiedRow) {
+            $this->view->showMsg('success', '¡BORRADO EXITOSO!');
+        } else {
+            $this->view -> showMsg('danger', '¡BORRADO FALLÓ');
         }
     }
 }

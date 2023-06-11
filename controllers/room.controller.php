@@ -2,16 +2,19 @@
 include_once('models/room.model.php');
 include_once('views/room.view.php');
 include_once('controllers/theme.controller.php');
+include_once('helpers/AuthHelper.php');
 
 class RoomController {
     private $model;
     private $view;
     private $themeController;
+    private $authHelper;
 
     public function __construct() {
         $this->model = new RoomModel();
         $this->view = new RoomView();
         $this->themeController = new ThemeController();
+        $this->authHelper = new AuthHelper();
     }
 
     public function showAllRooms() {
@@ -34,6 +37,7 @@ class RoomController {
     }
 
     public function showGenericForm($id,$method, $title, $action) {
+        $this->authHelper->checkLoggedIn();
         if ($title == 'Nueva Sala de Escape') {
             $values = "";
             $this-> view -> showForm($method, $title, $action, $values,
@@ -55,6 +59,7 @@ class RoomController {
     }    
 
     public function createRoom() {
+        $this->authHelper->checkLoggedIn();
         if(isset($_POST['nombre']) && isset($_POST['descripcion'])
         && isset($_POST['capacidad']) && isset($_POST['id_tematica'])
         && isset($_POST['dificultad']) && isset($_POST['tiempo'])
@@ -73,6 +78,7 @@ class RoomController {
     }
 
     public function changeRoom($id) {
+        $this->authHelper->checkLoggedIn();
         if(isset($_POST['nombre']) && isset($_POST['descripcion'])
         && isset($_POST['capacidad']) && isset($_POST['id_tematica'])
         && isset($_POST['dificultad']) && isset($_POST['tiempo'])
@@ -91,11 +97,13 @@ class RoomController {
     }
 
     public function deleteARoom($id) {
+        $this->authHelper->checkLoggedIn();
         $this->view-> showMsg('danger', '¿Seguro que desea eliminar esta sala? <a href="../eliminar-sala/'.$id.'/confirmar-borrado" class="btn btn-danger">Confirmar</a>');
         $this->showARoom($id);
     }
 
     public function confirmDelete($id) {
+        $this->authHelper->checkLoggedIn();
         $modifiedRow = $this->model->deleteRoomById($id);
         if($modifiedRow) {
             $this->view->showMsg('success', '¡BORRADO EXITOSO!');

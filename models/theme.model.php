@@ -28,4 +28,20 @@ class ThemeModel {
         $sql->execute();
         return $sql->rowCount() > 0;  
     }
+
+    public function updateTheme($name, $class, $id) {
+        $sentencia = 'UPDATE themes SET name = :name, classification = :classification WHERE id = :id';
+        $sql = $this->db->prepare($sentencia);
+        $sql->bindParam(':name', $name);
+        $sql->bindParam(':classification', $class);
+        $sql->bindParam(':id', $id);
+        $sql->execute();
+        return $sql->rowCount() > 0;
+    }
+
+    public function deleteThemeById($id) {
+        $sql = $this->db->prepare('DELETE FROM themes WHERE id = ?');
+        $sql->execute([$id]);
+        return $sql->rowCount() > 0;
+    }
 }

@@ -3,6 +3,7 @@ define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'
 
 require_once('controllers/room.controller.php');
 require_once('controllers/theme.controller.php');
+require_once('controllers/login.controller.php');
 
 if (!empty($_GET['action'])) {
     $accion = $_GET['action'];
@@ -20,6 +21,18 @@ switch ($params[0]) {
     case 'router':
         if (isset($params[1])) {
             switch($params[1]) {
+                case 'login':
+                    $loginController = new LoginController();
+                    $loginController->showLogin();
+                    break;
+                case 'logout':
+                    $loginController = new LoginController();
+                    $loginController->logout();
+                    break;
+                case 'verificar-sesion':
+                    $loginController = new LoginController();
+                    $loginController->verifyUser();
+                    break;
                 case 'mostrar-sala':
                     $roomController = new RoomController();
                     $roomController->showARoom($params[2]);
@@ -69,10 +82,22 @@ switch ($params[0]) {
                     $themeController->showATheme($params[2]);
                     break;
                 case 'form-actualizar-tematica':
-                    echo ('en proceso');
+                    if (isset($params[3])) {
+                        $themeController = new ThemeController();
+                        $themeController->changeTheme($params[2]);
+                        break;
+                    }
+                    $themeController = new ThemeController();
+                    $themeController->showGenericThemeForm($params[2],'POST', 'Actualizar Temática', '../form-actualizar-tematica/'.$params[2].'/cambiar-tematica');
                     break;
                 case 'eliminar-tematica':
-                    echo ('en proceso');
+                    if (isset($params[3])) {
+                        $themeController = new ThemeController();
+                        $themeController->confirmDelete($params[2]);
+                        break;
+                    }
+                    $themeController = new ThemeController();
+                    $themeController->deleteATheme($params[2]);
                     break;
             }
         } else {
