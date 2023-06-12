@@ -8,7 +8,7 @@ class RoomView {
         $this->smarty = new Smarty();
     }
 
-    public function showRooms($rooms, $limit, $themes) {
+    public function showRooms($rooms, $limit, $themes, $session) {
         $roomsNoActive = array();
         foreach ($rooms as $room) {
             if ($room == $rooms[0]) {
@@ -21,6 +21,7 @@ class RoomView {
         $this->smarty->assign('rooms', $roomsNoActive);
         $this->smarty->assign('limit', $limit);
         $this->smarty->assign('themes', $themes);
+        $this->smarty->assign('session', $session);
         $this->smarty->display('templates/rooms.tpl');
     }
 

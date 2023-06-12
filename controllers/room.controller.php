@@ -20,10 +20,11 @@ class RoomController {
     public function showAllRooms() {
         $rooms = $this-> model-> getRooms();
         $themes =  $this-> themeController->showAllThemes();
+        $session = $this->authHelper->thereIsSession();
         if (!empty($rooms)) {
-            $this-> view -> showRooms($rooms, count($rooms)-1,  $themes);
+            $this-> view -> showRooms($rooms, count($rooms)-1,  $themes, $session);
         } else {
-            $this-> view -> showError('No hay salas');
+            $this-> view -> showMsg('danger', 'No hay salas');
         }
     }
 
@@ -32,7 +33,7 @@ class RoomController {
         if (!empty($room)) {
             $this-> view -> showRoom($room[0]);
         } else {
-            $this-> view -> showError('No hay Salas');
+            $this-> view -> showMsg('danger', 'No hay salas');
         }
     }
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-06-11 18:12:51
+/* Smarty version 4.3.1, created on 2023-06-12 06:26:32
   from 'C:\xampp\htdocs\TPE_Web2_TUDAI_UNICEN\templates\rooms.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6485f283947e59_58215889',
+  'unifunc' => 'content_64869e7844cb86_42953933',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '605b69063a25d62e9fa296ca632b649d23fd31a9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE_Web2_TUDAI_UNICEN\\templates\\rooms.tpl',
-      1 => 1686499969,
+      1 => 1686543988,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6485f283947e59_58215889 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64869e7844cb86_42953933 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="d-flex flex-row-reverse">
@@ -45,6 +45,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
   <button type="submit" class="btn btn-primary mb-3">Buscar</button>
 </form>
 </div>
+<?php if ($_smarty_tpl->tpl_vars['session']->value) {?>
+  <div class="d-flex flex-row-reverse">
+    <a href="router/logout" class="btn btn-primary">Desconectarse</a>
+  </div>
+<?php }?>
   <main class="container mt-5">
     <div id="carouselExampleIndicators" class="carousel slide">
       <div class="carousel-indicators">

@@ -29,7 +29,7 @@ class LoginController {
         if (!empty($user) && password_verify($password, $user->password)) {
             $this->authHelper->login($user);
 
-            header('Location: rooms');
+            header('Location: ./rooms');
         } else {
             $this->view->showLogin("Login incorrecto");
         }

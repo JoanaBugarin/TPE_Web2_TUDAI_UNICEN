@@ -15,8 +15,6 @@
   <div class="container-fluid">
     <img src="https://i.imgur.com/Ji2Odzw.jpg" alt="Logo Get Out" width="55" height="50" class="d-inline-block align-text-top">
     <a class="navbar-brand text-light" href="http://localhost/TPE_Web2_TUDAI_UNICEN/">Salas de Escape</a>
-    <a href="router/logout" class="btn btn-primary">Desconectarse</a>
-    
   </div>
 </nav>
 <div class="d-flex flex-row-reverse">

@@ -21,4 +21,9 @@ class AuthHelper {
             die();
         }
     }
+
+    public function thereIsSession() {
+        session_start();
+        return isset($_SESSION['ID_USER']);
+    }
 }

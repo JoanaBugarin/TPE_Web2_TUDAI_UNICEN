@@ -10,6 +10,11 @@
   <button type="submit" class="btn btn-primary mb-3">Buscar</button>
 </form>
 </div>
+{if $session}
+  <div class="d-flex flex-row-reverse">
+    <a href="router/logout" class="btn btn-primary">Desconectarse</a>
+  </div>
+{/if}
   <main class="container mt-5">
     <div id="carouselExampleIndicators" class="carousel slide">
       <div class="carousel-indicators">
