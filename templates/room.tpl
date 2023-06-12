@@ -8,6 +8,7 @@
         <p>Capacidad: {$room->capacity}</p>
         <p>Dificultad: {$room->difficulty}</p>
         <p>Duración: {$room->time}</p>
+        <a class="btn btn-rooms btn-primary" href="http://localhost/TPE_Web2_TUDAI_UNICEN">Regresar</a>
     </section>
 </main>
 </section>

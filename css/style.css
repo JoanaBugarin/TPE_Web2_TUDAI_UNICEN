@@ -9,7 +9,8 @@ body {
 }
 
 img.img-carr {
-    width: 50%;
+    width: 648px;
+    height: 344px;
 }
 
 .w-100 {
@@ -45,6 +46,8 @@ section.first-section {
 
 footer {
     width: 100%;
+    position: fixed;
+    bottom: 0;
 }
 
 .centrado {

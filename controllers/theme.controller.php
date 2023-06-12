@@ -76,7 +76,6 @@ class ThemeController {
     public function deleteATheme($id) {
         $this->authHelper->checkLoggedIn();
         $this->view-> showMsg('danger', '¿Seguro que desea eliminar esta temática? <a href="../eliminar-tematica/'.$id.'/confirmar-borrado" class="btn btn-danger">Confirmar</a>');
-        $this->showATheme($id);
     }
 
     public function confirmDelete($id) {
@@ -85,7 +84,7 @@ class ThemeController {
         if($modifiedRow) {
             $this->view->showMsg('success', '¡BORRADO EXITOSO!');
         } else {
-            $this->view -> showMsg('danger', '¡BORRADO FALLÓ');
+            $this->view -> showMsg('danger', '¡BORRADO FALLÓ!');
         }
     }
 }

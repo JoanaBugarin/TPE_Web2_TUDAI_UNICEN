@@ -1,4 +1,12 @@
 {include file="header.tpl"}
+{if $session}
+<div class="d-flex flex-row-reverse">
+    <div class="btn-group">
+        <a href="router/form-nueva-sala" class="btn btn-primary">+ Sala</a>
+        <a href="router/form-nueva-tematica" class="btn btn-primary">+ Temática</a>
+    </div>
+</div>
+{/if}
 <div class="d-flex flex-row-reverse">
 <form class="d-flex" role="search" method="GET" action="router/mostrar-salas-por-tematica">
   <select name="select-theme" class="form-select text-light bg-dark border-bottom border-bottom-dark form-select-sm buscar" data-bs-theme="dark" aria-label="Default select example">
@@ -13,6 +21,10 @@
 {if $session}
   <div class="d-flex flex-row-reverse">
     <a href="router/logout" class="btn btn-primary">Desconectarse</a>
+  </div>
+{else}
+  <div class="d-flex flex-row-reverse">
+    <a href="router/login" class="btn btn-primary">Iniciar sesión</a>
   </div>
 {/if}
   <main class="container mt-5">
@@ -32,8 +44,10 @@
               <h5 class="card-title">{$roomActive->name}</h5>
               <p class="card-text">{$roomActive->description}</p>
               <a class="btn btn-rooms btn-primary" href="router/mostrar-sala/{$roomActive->id}">Ver más</a>
-              <a class="btn btn-rooms btn-warning" href="router/form-actualizar-sala/{$roomActive->id}">Actualizar</a>
-              <a class="btn btn-rooms btn-danger" href="router/eliminar-sala/{$roomActive->id}">Eliminar</a>
+              {if $session}
+                <a class="btn btn-rooms btn-warning" href="router/form-actualizar-sala/{$roomActive->id}">Actualizar</a>
+                <a class="btn btn-rooms btn-danger" href="router/eliminar-sala/{$roomActive->id}">Eliminar</a>
+              {/if}
             </div>
           </div>
         </div>    
@@ -45,8 +59,10 @@
               <h5 class="card-title">{$room->name}</h5>
               <p class="card-text">{$room->description}</p>
               <a class="btn btn-rooms btn-primary" href="router/mostrar-sala/{$room->id}">Ver más</a>
-              <a class="btn btn-rooms btn-warning" href="router/form-actualizar-sala/{$room->id}">Actualizar</a>
-              <a class="btn btn-rooms btn-danger" href="router/eliminar-sala/{$room->id}">Eliminar</a>
+              {if $session}
+                <a class="btn btn-rooms btn-warning" href="router/form-actualizar-sala/{$room->id}">Actualizar</a>
+                <a class="btn btn-rooms btn-danger" href="router/eliminar-sala/{$room->id}">Eliminar</a>
+              {/if}
             </div>
           </div>
         </div>    
@@ -70,8 +86,10 @@
     <div class="themes">
       <h3>{$theme->name}</h3>
       <a class="btn btn-rooms btn-primary" href="./router/mostrar-tematica/{$theme->id}">Conocer más</a>
-      <a class="btn btn-rooms btn-warning" href="./router/form-actualizar-tematica/{$theme->id}">Actualizar</a>
-      <a class="btn btn-rooms btn-danger" href="./router/eliminar-tematica/{$theme->id}">Eliminar</a>
+      {if $session}
+        <a class="btn btn-rooms btn-warning" href="./router/form-actualizar-tematica/{$theme->id}">Actualizar</a>
+        <a class="btn btn-rooms btn-danger" href="./router/eliminar-tematica/{$theme->id}">Eliminar</a>
+      {/if}
     </div>
     {/foreach}
   </div>

@@ -40,9 +40,10 @@ class RoomController {
     public function showGenericForm($id,$method, $title, $action) {
         $this->authHelper->checkLoggedIn();
         if ($title == 'Nueva Sala de Escape') {
+            $themes =  $this-> themeController->showAllThemes();
             $values = "";
             $this-> view -> showForm($method, $title, $action, $values,
-            $values, $values, $values, $values, $values, $values);
+            $values, $values, $themes, $values, $values, $values);
         } else {
             $room = $this-> model-> getRoomById($id);
             $nombre = $room[0]->name;
@@ -100,7 +101,6 @@ class RoomController {
     public function deleteARoom($id) {
         $this->authHelper->checkLoggedIn();
         $this->view-> showMsg('danger', '¿Seguro que desea eliminar esta sala? <a href="../eliminar-sala/'.$id.'/confirmar-borrado" class="btn btn-danger">Confirmar</a>');
-        $this->showARoom($id);
     }
 
     public function confirmDelete($id) {
@@ -108,7 +108,6 @@ class RoomController {
         $modifiedRow = $this->model->deleteRoomById($id);
         if($modifiedRow) {
             $this->view->showMsg('success', '¡BORRADO EXITOSO!');
-            $this->showAllRooms();
         } else {
             $this->view -> showMsg('danger', '¡BORRADO FALLÓ');
         }
@@ -121,7 +120,7 @@ class RoomController {
             if (!empty($rooms)) {
                 $this-> view -> showRoomsOfTheme($rooms);
             } else {
-                $this-> view -> showError('No hay salas');
+                $this-> view -> showMsg('danger', '¡No hay salas!');
             }
         }
     }

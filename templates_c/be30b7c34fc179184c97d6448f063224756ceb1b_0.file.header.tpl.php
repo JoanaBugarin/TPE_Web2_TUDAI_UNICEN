@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-06-12 06:21:38
+/* Smarty version 4.3.1, created on 2023-06-12 07:44:03
   from 'C:\xampp\htdocs\TPE_Web2_TUDAI_UNICEN\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_64869d52b9cd99_44249495',
+  'unifunc' => 'content_6486b0a328a049_58571113',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'be30b7c34fc179184c97d6448f063224756ceb1b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE_Web2_TUDAI_UNICEN\\templates\\header.tpl',
-      1 => 1686543587,
+      1 => 1686548432,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64869d52b9cd99_44249495 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6486b0a328a049_58571113 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,11 +41,5 @@ function content_64869d52b9cd99_44249495 (Smarty_Internal_Template $_smarty_tpl)
     <img src="https://i.imgur.com/Ji2Odzw.jpg" alt="Logo Get Out" width="55" height="50" class="d-inline-block align-text-top">
     <a class="navbar-brand text-light" href="http://localhost/TPE_Web2_TUDAI_UNICEN/">Salas de Escape</a>
   </div>
-</nav>
-<div class="d-flex flex-row-reverse">
-    <div class="btn-group">
-        <a href="router/form-nueva-sala" class="btn btn-primary">+ Sala</a>
-        <a href="router/form-nueva-tematica" class="btn btn-primary">+ Temática</a>
-    </div>
-</div><?php }
+</nav><?php }
 }

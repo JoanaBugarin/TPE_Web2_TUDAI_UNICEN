@@ -17,9 +17,3 @@
     <a class="navbar-brand text-light" href="http://localhost/TPE_Web2_TUDAI_UNICEN/">Salas de Escape</a>
   </div>
 </nav>
-<div class="d-flex flex-row-reverse">
-    <div class="btn-group">
-        <a href="router/form-nueva-sala" class="btn btn-primary">+ Sala</a>
-        <a href="router/form-nueva-tematica" class="btn btn-primary">+ Temática</a>
-    </div>
-</div>

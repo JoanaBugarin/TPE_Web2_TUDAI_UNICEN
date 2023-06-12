@@ -17,6 +17,7 @@
             </div>
         {/foreach}
         </div>
+        <a class="btn btn-rooms btn-primary mt-3" href="http://localhost/TPE_Web2_TUDAI_UNICEN">Regresar</a>
     </main>
 </section>
 {include file="footer.tpl"}

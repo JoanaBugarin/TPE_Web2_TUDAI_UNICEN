@@ -17,11 +17,20 @@
                 Número de personas para quienes está pensada la sala
             </div>
 
-            <label for="theme_id" class="form-label">Id de la temática</label>
-            <input type="number" id="theme_id" name="id_tematica" class="form-control" aria-labelledby="HelpBlockThemeId" value="{$idTematicaPrevia}">
-            <div id="HelpBlockThemeId" class="form-text">
-                Id (número) que identifica a la temática a la que pertenece la sala
-            </div>
+            {if is_array($idTematicaPrevia)}
+                <label for="id_tematica" class="form-label">Nombre de la temática</label>
+                <select name="id_tematica" class="form-control" aria-label="Default select example">
+                    {foreach from=$idTematicaPrevia  item=$theme}
+                        <option value="{$theme->id}">{$theme->name}</option>
+                    {/foreach}
+                </select>
+            {else}
+                <label for="theme_id" class="form-label">Id de la temática</label>
+                <input type="number" id="theme_id" name="id_tematica" class="form-control" aria-labelledby="HelpBlockThemeId" value="{$idTematicaPrevia}">
+                <div id="HelpBlockThemeId" class="form-text">
+                    Id (número) que identifica a la temática a la que pertenece la sala
+                </div>
+            {/if}
 
             <label for="difficulty" class="form-label">Dificultad</label>
             <input type="text" id="difficulty" name="dificultad" class="form-control" aria-labelledby="HelpBlockDificultad" value="{$dificultadPrevia}">

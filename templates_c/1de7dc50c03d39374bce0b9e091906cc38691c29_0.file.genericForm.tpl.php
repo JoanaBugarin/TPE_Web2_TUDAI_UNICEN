@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-06-02 03:47:52
+/* Smarty version 4.3.1, created on 2023-06-12 07:13:17
   from 'C:\xampp\htdocs\TPE_Web2_TUDAI_UNICEN\templates\genericForm.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_64794a4883c542_56930272',
+  'unifunc' => 'content_6486a96dc700d1_03835263',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1de7dc50c03d39374bce0b9e091906cc38691c29' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE_Web2_TUDAI_UNICEN\\templates\\genericForm.tpl',
-      1 => 1685668505,
+      1 => 1686546790,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_64794a4883c542_56930272 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6486a96dc700d1_03835263 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <h1 class="centrado"><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
@@ -49,12 +49,30 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
                 Número de personas para quienes está pensada la sala
             </div>
 
-            <label for="theme_id" class="form-label">Id de la temática</label>
-            <input type="number" id="theme_id" name="id_tematica" class="form-control" aria-labelledby="HelpBlockThemeId" value="<?php echo $_smarty_tpl->tpl_vars['idTematicaPrevia']->value;?>
+            <?php if (is_array($_smarty_tpl->tpl_vars['idTematicaPrevia']->value)) {?>
+                <label for="id_tematica" class="form-label">Nombre de la temática</label>
+                <select name="id_tematica" class="form-control" aria-label="Default select example">
+                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['idTematicaPrevia']->value, 'theme');
+$_smarty_tpl->tpl_vars['theme']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['theme']->value) {
+$_smarty_tpl->tpl_vars['theme']->do_else = false;
+?>
+                        <option value="<?php echo $_smarty_tpl->tpl_vars['theme']->value->id;?>
+"><?php echo $_smarty_tpl->tpl_vars['theme']->value->name;?>
+</option>
+                    <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                </select>
+            <?php } else { ?>
+                <label for="theme_id" class="form-label">Id de la temática</label>
+                <input type="number" id="theme_id" name="id_tematica" class="form-control" aria-labelledby="HelpBlockThemeId" value="<?php echo $_smarty_tpl->tpl_vars['idTematicaPrevia']->value;?>
 ">
-            <div id="HelpBlockThemeId" class="form-text">
-                Id (número) que identifica a la temática a la que pertenece la sala
-            </div>
+                <div id="HelpBlockThemeId" class="form-text">
+                    Id (número) que identifica a la temática a la que pertenece la sala
+                </div>
+            <?php }?>
 
             <label for="difficulty" class="form-label">Dificultad</label>
             <input type="text" id="difficulty" name="dificultad" class="form-control" aria-labelledby="HelpBlockDificultad" value="<?php echo $_smarty_tpl->tpl_vars['dificultadPrevia']->value;?>

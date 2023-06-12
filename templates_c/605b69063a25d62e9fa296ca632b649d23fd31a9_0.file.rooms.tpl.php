@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-06-12 06:26:32
+/* Smarty version 4.3.1, created on 2023-06-12 07:55:08
   from 'C:\xampp\htdocs\TPE_Web2_TUDAI_UNICEN\templates\rooms.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_64869e7844cb86_42953933',
+  'unifunc' => 'content_6486b33c727eb6_01478254',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '605b69063a25d62e9fa296ca632b649d23fd31a9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE_Web2_TUDAI_UNICEN\\templates\\rooms.tpl',
-      1 => 1686543988,
+      1 => 1686549300,
       2 => 'file',
     ),
   ),
@@ -22,9 +22,16 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_64869e7844cb86_42953933 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6486b33c727eb6_01478254 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
+if ($_smarty_tpl->tpl_vars['session']->value) {?>
+<div class="d-flex flex-row-reverse">
+    <div class="btn-group">
+        <a href="router/form-nueva-sala" class="btn btn-primary">+ Sala</a>
+        <a href="router/form-nueva-tematica" class="btn btn-primary">+ Temática</a>
+    </div>
+</div>
+<?php }?>
 <div class="d-flex flex-row-reverse">
 <form class="d-flex" role="search" method="GET" action="router/mostrar-salas-por-tematica">
   <select name="select-theme" class="form-select text-light bg-dark border-bottom border-bottom-dark form-select-sm buscar" data-bs-theme="dark" aria-label="Default select example">
@@ -48,6 +55,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 <?php if ($_smarty_tpl->tpl_vars['session']->value) {?>
   <div class="d-flex flex-row-reverse">
     <a href="router/logout" class="btn btn-primary">Desconectarse</a>
+  </div>
+<?php } else { ?>
+  <div class="d-flex flex-row-reverse">
+    <a href="router/login" class="btn btn-primary">Iniciar sesión</a>
   </div>
 <?php }?>
   <main class="container mt-5">
@@ -82,10 +93,12 @@ $_smarty_tpl->tpl_vars['ini']->first = $_smarty_tpl->tpl_vars['ini']->iteration 
 </p>
               <a class="btn btn-rooms btn-primary" href="router/mostrar-sala/<?php echo $_smarty_tpl->tpl_vars['roomActive']->value->id;?>
 ">Ver más</a>
-              <a class="btn btn-rooms btn-warning" href="router/form-actualizar-sala/<?php echo $_smarty_tpl->tpl_vars['roomActive']->value->id;?>
+              <?php if ($_smarty_tpl->tpl_vars['session']->value) {?>
+                <a class="btn btn-rooms btn-warning" href="router/form-actualizar-sala/<?php echo $_smarty_tpl->tpl_vars['roomActive']->value->id;?>
 ">Actualizar</a>
-              <a class="btn btn-rooms btn-danger" href="router/eliminar-sala/<?php echo $_smarty_tpl->tpl_vars['roomActive']->value->id;?>
+                <a class="btn btn-rooms btn-danger" href="router/eliminar-sala/<?php echo $_smarty_tpl->tpl_vars['roomActive']->value->id;?>
 ">Eliminar</a>
+              <?php }?>
             </div>
           </div>
         </div>    
@@ -106,10 +119,12 @@ $_smarty_tpl->tpl_vars['room']->do_else = false;
 </p>
               <a class="btn btn-rooms btn-primary" href="router/mostrar-sala/<?php echo $_smarty_tpl->tpl_vars['room']->value->id;?>
 ">Ver más</a>
-              <a class="btn btn-rooms btn-warning" href="router/form-actualizar-sala/<?php echo $_smarty_tpl->tpl_vars['room']->value->id;?>
+              <?php if ($_smarty_tpl->tpl_vars['session']->value) {?>
+                <a class="btn btn-rooms btn-warning" href="router/form-actualizar-sala/<?php echo $_smarty_tpl->tpl_vars['room']->value->id;?>
 ">Actualizar</a>
-              <a class="btn btn-rooms btn-danger" href="router/eliminar-sala/<?php echo $_smarty_tpl->tpl_vars['room']->value->id;?>
+                <a class="btn btn-rooms btn-danger" href="router/eliminar-sala/<?php echo $_smarty_tpl->tpl_vars['room']->value->id;?>
 ">Eliminar</a>
+              <?php }?>
             </div>
           </div>
         </div>    
@@ -142,10 +157,12 @@ $_smarty_tpl->tpl_vars['theme']->do_else = false;
 </h3>
       <a class="btn btn-rooms btn-primary" href="./router/mostrar-tematica/<?php echo $_smarty_tpl->tpl_vars['theme']->value->id;?>
 ">Conocer más</a>
-      <a class="btn btn-rooms btn-warning" href="./router/form-actualizar-tematica/<?php echo $_smarty_tpl->tpl_vars['theme']->value->id;?>
+      <?php if ($_smarty_tpl->tpl_vars['session']->value) {?>
+        <a class="btn btn-rooms btn-warning" href="./router/form-actualizar-tematica/<?php echo $_smarty_tpl->tpl_vars['theme']->value->id;?>
 ">Actualizar</a>
-      <a class="btn btn-rooms btn-danger" href="./router/eliminar-tematica/<?php echo $_smarty_tpl->tpl_vars['theme']->value->id;?>
+        <a class="btn btn-rooms btn-danger" href="./router/eliminar-tematica/<?php echo $_smarty_tpl->tpl_vars['theme']->value->id;?>
 ">Eliminar</a>
+      <?php }?>
     </div>
     <?php
 }

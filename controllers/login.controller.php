@@ -29,7 +29,7 @@ class LoginController {
         if (!empty($user) && password_verify($password, $user->password)) {
             $this->authHelper->login($user);
 
-            header('Location: ./rooms');
+            header('Location: http://localhost/TPE_Web2_TUDAI_UNICEN');
         } else {
             $this->view->showLogin("Login incorrecto");
         }
@@ -37,6 +37,6 @@ class LoginController {
 
     public function logout() {
         $this->authHelper->logout();
-        header('Location: rooms');
+        header('Location: http://localhost/TPE_Web2_TUDAI_UNICEN');
     }
 }
